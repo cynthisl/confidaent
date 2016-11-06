@@ -1,12 +1,28 @@
 <h1> HI NEW USER! </h1>
 
 <%= form_for :user do |f| %>
-    <p>
+    <div class="form-group">
         <%= f.label :first_name %><br>
-        <%= f.text_field :first_name %>
-    </p>
-
-    <p>
-        <%= f.submit %>
-    </p>
+        <%= f.text_field :first_name, class:"form-control" %>
+    </div>
+    <div>
+        <%= f.label :last_name %><br>
+        <%= f.text_field :last_name, class:"form-control" %>
+    </div>
+    <div>
+        <%= f.label :zip_code %><br>
+        <%= f.number_field :zip_code, class:"form-control" %>
+    </div>
+    <div>
+        <%= f.label :birthdate %><br>
+        <%= f.date_field :birthdate, class:"form-control" %>
+    </div>
+    <div>
+        TURN THIS INTO A SLIDER <br>
+        <%= f.label :career_status %><br>
+        <%= f.number_field :career_status, class:"form-control" %>
+    </div>
+    <div>
+        <%= f.submit class:"btn btn-primary" %>
+    </div>
 <% end %>
