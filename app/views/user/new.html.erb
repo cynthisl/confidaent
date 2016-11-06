@@ -1,0 +1,41 @@
+<h1> HI NEW USER! </h1>
+
+<%= form_for :user, url:{action:"create"} do |f| %>
+    <div class="form-group">
+        <%= f.label :first_name %><br>
+        <%= f.text_field :first_name, class:"form-control" %>
+    </div>
+    <div>
+        <%= f.label :last_name %><br>
+        <%= f.text_field :last_name, class:"form-control" %>
+    </div>
+    <div>
+        <%= f.label :zip_code %><br>
+        <%= f.number_field :zip_code, class:"form-control" %>
+    </div>
+    <div>
+        <%= f.label :birthdate %><br>
+        <%= f.date_field :birthdate, class:"form-control" %>
+    </div>
+    <div>
+        TURN THIS INTO A SLIDER (WHAT ARE YOU UP TO) <br>
+        <%= f.label :career_status %><br>
+        <%= f.number_field :career_status, class:"form-control" %>
+    </div>
+    <div>
+        I can answer your questions about
+    </div>
+    <div>
+        I have questions about
+    </div>
+    <div>
+        We can meet up over
+    </div>
+    <div>
+        Times to best meet
+    </div>
+
+    <div>
+        <%= f.submit class:"btn btn-primary" %>
+    </div>
+<% end %>
