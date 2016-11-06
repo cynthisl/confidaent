@@ -16,8 +16,7 @@
 !/log/.keep
 /tmp
 
-# Ignore Gemfile.lock
-Gemfile.lock
+
 
 # Ignore swapfiles
 *.swp
