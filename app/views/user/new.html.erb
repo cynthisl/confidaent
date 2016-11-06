@@ -1,5 +1,5 @@
 <h1> HI NEW USER! </h1>
-
+<div>
 <%= form_for :user, url:{action:"create"} do |f| %>
     <div class="form-group">
         <%= f.label :first_name %><br>
@@ -18,8 +18,7 @@
         <%= f.date_select :birthdate, class:"form-control", :start_year => Date.today.year - 100, :end_year => Date.today.year %>
     </div>
     <div>
-        TURN THIS INTO A SLIDER (WHAT ARE YOU UP TO) <br>
-        <%= f.label :career_status %><br>
+        Number of years in industry:
         <%= f.number_field :career_status, class:"form-control" %>
     </div>
     <div>
