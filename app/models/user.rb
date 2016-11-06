@@ -9,11 +9,26 @@ class User < ActiveRecord::Base
   has_one :meet_over, :through => :meet_preference
 
   # has_many :connections
-  def find_matches
-    #findall users that have a strength that this user has a request for
-    # Users.where
-    matches = User.first.requests.map do |s|
+
+  def find_all_matches
+    #Currently only finds users that have skills current user requests
+    #SHOULD only return users with those skills that also have a requests that match current user's skill
+      #At least prioritize them.
+      #Then show what they should connect over.
+    #Potentially: take into account career level, at this point just display.
+    requests.map do |s|
       Skill.find(s.skill_id).users
+    end
+  end
+
+  def find_local_matches
+
+    matches = find_all_matches
+
+    matches[0].collect do |match|
+      if match.zip_code == zip_code
+        return match
+      end
     end
   end
 
