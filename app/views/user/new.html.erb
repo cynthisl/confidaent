@@ -15,7 +15,7 @@
     </div>
     <div>
         <%= f.label :birthdate %><br>
-        <%= f.date_field :birthdate, class:"form-control" %>
+        <%= f.date_select :birthdate, class:"form-control", :start_year => Date.today.year - 100, :end_year => Date.today.year %>
     </div>
     <div>
         TURN THIS INTO A SLIDER (WHAT ARE YOU UP TO) <br>
