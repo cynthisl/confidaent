@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161106165233) do
+ActiveRecord::Schema.define(version: 20161106165737) do
 
   create_table "connections", force: :cascade do |t|
     t.integer  "user_1"
@@ -89,9 +89,11 @@ ActiveRecord::Schema.define(version: 20161106165233) do
     t.integer  "zip_code"
     t.datetime "birthdate"
     t.integer  "career_status"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.text     "bio"
+    t.string   "email"
+    t.string   "password_digest"
   end
 
 end
