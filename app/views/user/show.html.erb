@@ -3,6 +3,6 @@
 <div>
     Name: <%= @user.first_name %> <%= @user.last_name %> <br>
     Location: <%= @user.zip_code %><br>
-    Birthdate: <%= @user.birthdate %> <br>
+    Birthdate: <%= @user.birthdate.to_date %> <br>
     Career Status: <%= @user.career_status %> DO SOME SORT OF ENUM HERE<br>
 </div>
