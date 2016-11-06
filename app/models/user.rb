@@ -8,8 +8,6 @@ class User < ActiveRecord::Base
   has_one :meet_time, :through => :meet_preference
   has_one :meet_over, :through => :meet_preference
 
-  has_secure_password
-
   # has_many :connections
 
   def find_all_matches
@@ -27,8 +25,8 @@ class User < ActiveRecord::Base
 
     matches = find_all_matches
 
-    matches[0].collect do |match|
-      if match.zip_code == zip_code
+    matches[1].collect do |match|
+      if match.class == User && match.zip_code == zip_code
         return match
       end
     end
