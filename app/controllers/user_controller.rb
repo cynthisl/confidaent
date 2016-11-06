@@ -11,6 +11,8 @@ class UserController < ApplicationController
     def create
         @user = User.new(user_params)
 
+        Strength.new(skill_id: params[:skill], user_id: @user.id)
+        Strength.save
         if @user.save
           session[:user_id] = @user.id
           redirect_to @user

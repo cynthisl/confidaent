@@ -11,7 +11,7 @@ id = 0
   User.create(
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
-  zip_code: Faker::Address.zip_code,
+  zip_code: 98101,
   birthdate: Faker::Date.between(120.years.ago, 18.years.ago),
   career_status: rand(1..10)
   )
@@ -25,7 +25,7 @@ id = 0
     drink: Faker::Boolean.boolean,
     coffee: Faker::Boolean.boolean
     )
-    
+
   MeetTime.create(
     mon_afternoon: Faker::Boolean.boolean,
     mon_evening: Faker::Boolean.boolean,
@@ -50,7 +50,24 @@ id = 0
   )
 end
 
+
 100.times do
+  User.create(
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  zip_code: 60611,
+  birthdate: Faker::Date.between(120.years.ago, 18.years.ago),
+  career_status: rand(1..10)
+  )
+
+  User.create(
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  zip_code: 94101,
+  birthdate: Faker::Date.between(120.years.ago, 18.years.ago),
+  career_status: rand(1..10)
+  )
+
   Skill.create(name: Faker::Name.title)
 
   Skill.create(name: Faker::Company.profession)
@@ -59,7 +76,7 @@ end
 end
 
 
-200.times do
-  Request.create(user_id: rand(1..200), skill_id: rand(1..300))
-  Strength.create(user_id: rand(1..200), skill_id: rand(1..300))
+700.times do
+  Request.create(user_id: rand(1..400), skill_id: rand(1..300))
+  Strength.create(user_id: rand(1..400), skill_id: rand(1..300))
 end
