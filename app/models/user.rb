@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   has_one :meet_time, :through => :meet_preference
   has_one :meet_over, :through => :meet_preference
 
+  has_secure_password
+
   # has_many :connections
 
   def find_all_matches
