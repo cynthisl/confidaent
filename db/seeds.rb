@@ -5,3 +5,25 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+User.create(first_name: "A")
+User.create(first_name: "B")
+User.create(first_name: "C")
+
+Skill.create(name: "something")
+Skill.create(name: "talking")
+Skill.create(name: "cooking")
+Skill.create(name: "hacking")
+
+Request.create(user_id: 1, skill_id: 1)
+Request.create(user_id: 1, skill_id: 2)
+Request.create(user_id: 2, skill_id: 1)
+Request.create(user_id: 3, skill_id: 3)
+Request.create(user_id: 3, skill_id: 2)
+
+
+Strength.create(user_id: 3, skill_id: 1)
+Strength.create(user_id: 2, skill_id: 2)
+Strength.create(user_id: 2, skill_id: 3)
+Strength.create(user_id: 1, skill_id: 3)
