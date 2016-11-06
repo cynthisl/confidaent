@@ -1,5 +1,5 @@
 class MeetPreference < ActiveRecord::Base
   belongs_to :user
-  has_one :meet_over
+  has_many :meet_overs
   has_one :meet_time
 end

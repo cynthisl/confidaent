@@ -27,3 +27,16 @@ Strength.create(user_id: 3, skill_id: 1)
 Strength.create(user_id: 2, skill_id: 2)
 Strength.create(user_id: 2, skill_id: 3)
 Strength.create(user_id: 1, skill_id: 3)
+
+
+MeetPreference.create(user_id: 1)
+MeetPreference.create(user_id: 2)
+MeetPreference.create(user_id: 3)
+
+MeetOver.create(meet_preference_id: 1, food: true, drink: true)
+MeetOver.create(meet_preference_id: 2, coffee: true, drink: true)
+MeetOver.create(meet_preference_id: 3, food: true)
+
+MeetTime.create(meet_preference_id: 1, mon_evening: true, sun_morn: true, wed_afternoon: true )
+MeetTime.create(meet_preference_id: 2, mon_evening: true, wed_afternoon: true, thur_morn: true, sun_evening: true, fri_morn: true )
+MeetTime.create(meet_preference_id: 3, sun_morn: true, mon_evening: true, mon_morn: true, tue_evening: true )
