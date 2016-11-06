@@ -6,7 +6,8 @@ class CreateUsers < ActiveRecord::Migration
       t.integer :zip_code
       t.datetime :birthdate
       t.integer :career_status
-      
+      t.string :photo
+
       t.timestamps null: false
     end
   end
