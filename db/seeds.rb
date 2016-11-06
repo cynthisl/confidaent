@@ -6,37 +6,60 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+id = 0
+200.times do
+  User.create(
+  first_name: Faker::Name.first_name,
+  last_name: Faker::Name.last_name,
+  zip_code: Faker::Address.zip_code,
+  birthdate: Faker::Date.between(120.years.ago, 18.years.ago),
+  career_status: rand(1..10)
+  )
 
-User.create(first_name: "A")
-User.create(first_name: "B")
-User.create(first_name: "C")
+  id += 1
+  MeetPreference.create(user_id: id)
 
-Skill.create(name: "something")
-Skill.create(name: "talking")
-Skill.create(name: "cooking")
-Skill.create(name: "hacking")
+  MeetOver.create(
+    meet_preference_id: id,
+    food: Faker::Boolean.boolean,
+    drink: Faker::Boolean.boolean,
+    coffee: Faker::Boolean.boolean
+    )
+    
+  MeetTime.create(
+    mon_afternoon: Faker::Boolean.boolean,
+    mon_evening: Faker::Boolean.boolean,
+    tue_morn: Faker::Boolean.boolean,
+    tue_afternoon: Faker::Boolean.boolean,
+    tue_evening: Faker::Boolean.boolean,
+    wed_morn: Faker::Boolean.boolean,
+    wed_afternoon: Faker::Boolean.boolean,
+    wed_evening: Faker::Boolean.boolean,
+    thur_morn: Faker::Boolean.boolean,
+    thur_afternoon: Faker::Boolean.boolean,
+    thur_evening: Faker::Boolean.boolean,
+    fri_morn: Faker::Boolean.boolean,
+    fri_afternoon: Faker::Boolean.boolean,
+    fri_evening: Faker::Boolean.boolean,
+    sat_morn: Faker::Boolean.boolean,
+    sat_afternoon: Faker::Boolean.boolean,
+    sat_evening: Faker::Boolean.boolean,
+    sun_morn: Faker::Boolean.boolean,
+    sun_afternoon: Faker::Boolean.boolean,
+    sun_evening: Faker::Boolean.boolean
+  )
+end
 
-Request.create(user_id: 1, skill_id: 1)
-Request.create(user_id: 1, skill_id: 2)
-Request.create(user_id: 2, skill_id: 1)
-Request.create(user_id: 3, skill_id: 3)
-Request.create(user_id: 3, skill_id: 2)
+100.times do
+  Skill.create(name: Faker::Name.title)
+
+  Skill.create(name: Faker::Company.profession)
+
+  Skill.create(name: Faker::Superhero.power)
+end
 
 
-Strength.create(user_id: 3, skill_id: 1)
-Strength.create(user_id: 2, skill_id: 2)
-Strength.create(user_id: 2, skill_id: 3)
-Strength.create(user_id: 1, skill_id: 3)
-
-
-MeetPreference.create(user_id: 1)
-MeetPreference.create(user_id: 2)
-MeetPreference.create(user_id: 3)
-
-MeetOver.create(meet_preference_id: 1, food: true, drink: true)
-MeetOver.create(meet_preference_id: 2, coffee: true, drink: true)
-MeetOver.create(meet_preference_id: 3, food: true)
-
-MeetTime.create(meet_preference_id: 1, mon_evening: true, sun_morn: true, wed_afternoon: true )
-MeetTime.create(meet_preference_id: 2, mon_evening: true, wed_afternoon: true, thur_morn: true, sun_evening: true, fri_morn: true )
-MeetTime.create(meet_preference_id: 3, sun_morn: true, mon_evening: true, mon_morn: true, tue_evening: true )
+200.times do
+  Request.create(user_id: rand(1..200), skill_id: rand(1..300))
+  Strength.create(user_id: rand(1..200), skill_id: rand(1..300))
+end
