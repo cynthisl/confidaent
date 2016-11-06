@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161105215740) do
+ActiveRecord::Schema.define(version: 20161106165233) do
+
+  create_table "connections", force: :cascade do |t|
+    t.integer  "user_1"
+    t.integer  "user_2"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "meet_overs", force: :cascade do |t|
     t.boolean  "food"
@@ -84,6 +91,7 @@ ActiveRecord::Schema.define(version: 20161105215740) do
     t.integer  "career_status"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
+    t.text     "bio"
   end
 
 end
